@@ -21,10 +21,14 @@ let pass = process.env.PASS
 
 //Mongo DB
 const CONNECTION_URL = `mongodb+srv://${user}:${pass}@cluster0.dqfl1.mongodb.net/?retryWrites=true&w=majority`
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 app.get('/', (req, res) => {
   res.send('Hello World')
+})
+
+app.get('/greeting', (req, res) => {
+  res.json({ greeting: 'hello' })
 })
 
 mongoose
@@ -33,4 +37,3 @@ mongoose
     app.listen(port, () => console.log(`Server running on port: ${port}`))
   )
   .catch((error) => console.log(error.message))
-
