@@ -1,5 +1,5 @@
 const contactForm = (req, res) => {
-  res.send('hellos')
+  res.send('hello')
 }
 
 export default { contactForm }
