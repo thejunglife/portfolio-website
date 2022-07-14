@@ -1,5 +1,6 @@
 import User from '../models/user.js'
 
+//this will be used later when games section gets created
 const userInfo = async (req, res) => {
   console.log('hello')
   try {
@@ -15,8 +16,9 @@ const userInfo = async (req, res) => {
   }
 }
 
-const userGet = (req, res) => {
-  res.send('get')
+const userGet = async (req, res) => {
+  const getUser = await User.find()
+  res.send(getUser)
 }
 
 export default { userGet, userInfo }
