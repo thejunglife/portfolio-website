@@ -1,56 +1,21 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import Home from './pages/Home/Home.js'
-import About from './pages/About/About.js'
-import Contact from './pages/Contact/Contact.js'
-import Project from './pages/Project/Project.js'
+import Games from './pages/Games/Games.js'
+import Main from './pages/Main/Main.js'
 
 import Navbar from './components/Navbar/Navbar.js'
 
 const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <React.Fragment>
-              <Navbar />
-              <Home />
-            </React.Fragment>
-          }
-        ></Route>
-        <Route
-          path="/about"
-          element={
-            <React.Fragment>
-              <Navbar />
-              <About />
-            </React.Fragment>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <React.Fragment>
-              <Navbar />
-              <Contact />
-            </React.Fragment>
-          }
-        />
-        <Route
-          path="/project"
-          element={
-            <React.Fragment>
-              <Navbar />
-              <Project />
-            </React.Fragment>
-          }
-        />
+        <Route path="/games" element={<Games />}></Route>
+        <Route path="/" element={<Main />}></Route>
       </Routes>
     </BrowserRouter>
   )

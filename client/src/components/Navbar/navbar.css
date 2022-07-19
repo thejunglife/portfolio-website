@@ -12,3 +12,7 @@ a.nav-link {
   color: blue;
   font-size: 20px;
 }
+
+.navbar-nav .nav-link.active {
+  color: red;
+}
