@@ -1,0 +1,9 @@
+.text-center {
+  color: red;
+  background-color: aqua;
+  position: absolute;
+  left: 0;
+  /* this makes the footer at bottom of viewport height */
+  margin-top: 100vh;
+  right: 0;
+}

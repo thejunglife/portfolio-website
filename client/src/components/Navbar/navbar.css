@@ -13,6 +13,16 @@ a.nav-link {
   font-size: 20px;
 }
 
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link .active {
   color: red;
+  font-size: 20;
+}
+
+/* the nav links */
+.navbar-nav .nav-link:hover {
+  color: red;
+}
+
+.ms-auto.active-scroll-spy {
+  color: black;
 }

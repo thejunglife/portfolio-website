@@ -1,10 +1,13 @@
 import React from 'react'
+import ScrollSpy from 'react-ui-scrollspy'
 
 const Games = () => {
   return (
-    <section>
-      <h1> Games</h1>
-    </section>
+    <ScrollSpy>
+      <section id="game">
+        <h1> Games</h1>
+      </section>
+    </ScrollSpy>
   )
 }
 
