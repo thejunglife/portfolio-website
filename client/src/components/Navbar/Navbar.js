@@ -14,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar sticky="top" bg="gray" expand="lg">
+    <Navbar sticky="top" expand="lg">
       <Container>
         <Navbar.Brand>Paul Jung</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

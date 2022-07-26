@@ -1,0 +1,11 @@
+:root {
+  --midnight-green-eagle-green: #00323dff;
+  --blue-sapphire: #00627aff;
+  --dark-sea-green: #8db580ff;
+  --lavender-blue: #cbc5eaff;
+  --granite-gray: #646165ff;
+}
+
+html, body {
+  min-height: 100%
+}

@@ -1,9 +1,38 @@
 .text-center {
-  color: red;
-  background-color: aqua;
-  position: absolute;
+  color: white;
+  background-color: var(--granite-gray);
+  position: relative;
   left: 0;
   /* this makes the footer at bottom of viewport height */
   margin-top: 100vh;
   right: 0;
+}
+
+img,
+svg {
+  font-size: 40px;
+  color: black;
+  margin: 0 0.5rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+img,
+svg:hover {
+  transform: translateY(-2px);
+}
+
+img,
+svg.github {
+  color: #333;
+}
+
+img,
+svg.twitter {
+  color: #1da1f2;
+}
+
+img,
+svg.linkedin {
+  color: #0072b1;
 }
