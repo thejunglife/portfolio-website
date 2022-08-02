@@ -4,7 +4,9 @@ import './home.css'
 const Home = () => {
   return (
     <section className="home" id="home">
-      <h1>Home Page</h1>
+      <div className="intro">
+        <h1>Hello and welcome!</h1>
+      </div>
     </section>
   )
 }

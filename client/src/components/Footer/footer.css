@@ -1,11 +1,8 @@
 .text-center {
-  color: white;
-  background-color: var(--granite-gray);
+  color: var(--main-theme);
+  background-color: var(--sky);
   position: relative;
-  left: 0;
-  /* this makes the footer at bottom of viewport height */
-  margin-top: 100vh;
-  right: 0;
+  bottom: 0;
 }
 
 img,
@@ -35,4 +32,14 @@ svg.twitter {
 img,
 svg.linkedin {
   color: #0072b1;
+}
+
+img,
+svg.toTop {
+  color: var(--main-theme);
+  margin-left: 300px;
+}
+
+.copyRight {
+  margin-top: 20px;
 }

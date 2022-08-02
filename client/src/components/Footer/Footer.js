@@ -2,13 +2,23 @@ import React from 'react'
 import './footer.css'
 import Card from 'react-bootstrap/Card'
 
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { HashLink } from 'react-router-hash-link'
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaArrowAltCircleUp,
+} from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <Card className="text-center">
       <Card.Body>
-        <Card.Title>Footer</Card.Title>
+        <Card.Title>
+          <HashLink to="#top">
+            <FaArrowAltCircleUp className="toTop" />
+          </HashLink>
+        </Card.Title>
         <Card.Text>
           <div className="social">
             <a
@@ -32,6 +42,9 @@ const Footer = () => {
             >
               <FaLinkedin className="linkedin" />
             </a>
+          </div>
+          <div className="copyRight">
+            <p>&copy;{new Date().getUTCFullYear()} Paul Jung</p>
           </div>
         </Card.Text>
       </Card.Body>

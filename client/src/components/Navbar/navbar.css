@@ -1,28 +1,33 @@
-nav {
-  background: var(--granite-gray);
+.navbar {
+  background: transparent;
+  width: 100%;
+  margin-top: -75px;
 }
 
-a.navbar-brand {
-  color: white;
-  font-size: 50px;
+
+
+.navbar-bg {
+  background-color: var(--sky);
+}
+
+.navbar-brand {
+  color: var(--main-theme);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* navbar links */
 a.nav-link {
-  color: white;
+  color: var(--main-theme);
   font-size: 20px;
-}
-
-.navbar-nav .nav-link .active {
-  color: red;
-  font-size: 20;
+  font-weight: bold;
 }
 
 /* the nav links */
 .navbar-nav .nav-link:hover {
-  color: var(--dark-sea-green);
+  color: white;
 }
 
 .ms-auto.active-scroll-spy {
-  color: var(--dark-sea-green);
+  color: white;
 }

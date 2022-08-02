@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import './navbar.css'
 import Container from 'react-bootstrap/Container'
@@ -6,7 +6,19 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 const NavBar = () => {
-  //offset custom scroll
+  //change nav color when scroll
+  const [color, setColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >= 550) {
+      setColor(true)
+    } else {
+      setColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+
+  //offset custom scroll for HashLink
   const scrollWithOffset = (el) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset
     const yOffset = -80
@@ -14,7 +26,7 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar sticky="top" expand="lg">
+    <Navbar className={color ? 'navbar-bg' : 'navbar'} sticky="top" expand="lg">
       <Container>
         <Navbar.Brand>Paul Jung</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
