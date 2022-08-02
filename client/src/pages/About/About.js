@@ -12,8 +12,8 @@ const About = () => {
     <section className="about" id="about">
         <Container className="aboutCont">
           <Row>
-            <Col sm={2}></Col>
-            <Col sm={4}>
+            <Col sm={1}></Col>
+            <Col sm={5}>
               <div className="aboutMe">
                 <h1>About Me</h1>
                 <p>
@@ -24,12 +24,12 @@ const About = () => {
                 </p>
               </div>
             </Col>
-            <Col sm={4}>
+            <Col sm={5}>
               <div>
                 <img className="aboutPic" src={aboutPic} alt="aboutPic" />
               </div>
             </Col>
-            <Col sm={2}></Col>
+            <Col sm={1}></Col>
           </Row>
         </Container>
     </section>
