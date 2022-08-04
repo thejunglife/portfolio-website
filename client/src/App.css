@@ -10,17 +10,20 @@
   --outline: #3dacc9;
 }
 
+body,
+html {
+  /* !important to override bootstrap fonts */
+  font-family: 'Work Sans', sans-serif !important;
+}
+
 html {
   height: 100%;
 }
 body {
   min-height: 100%;
-}
-
-body,
-html {
-  /* !important to override bootstrap fonts */
-  font-family: 'Work Sans', sans-serif !important;
+  /* stops clouds creating extra white space */
+  overflow-x: hidden;
+  background: var(--main-theme) !important;
 }
 
 /* to keep footer bottom of page at all times */
@@ -33,3 +36,4 @@ html {
 .content-wrap {
   flex: 1;
 }
+
