@@ -3,6 +3,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import nodemailer from 'nodemailer'
 
 import contactRouter from './routes/contact.js'
 import userRouter from './routes/users.js'
