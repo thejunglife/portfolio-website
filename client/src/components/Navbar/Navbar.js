@@ -28,7 +28,7 @@ const NavBar = () => {
   return (
     <Navbar className={color ? 'navbar-bg' : 'navbar'} sticky="top" expand="lg">
       <Container>
-        <Navbar.Brand>Paul Jung</Navbar.Brand>
+        <Navbar.Brand>{`<PJ>`}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">

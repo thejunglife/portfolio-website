@@ -17,6 +17,12 @@ body {
   min-height: 100%;
 }
 
+body,
+html {
+  /* !important to override bootstrap fonts */
+  font-family: 'Work Sans', sans-serif !important;
+}
+
 /* to keep footer bottom of page at all times */
 .page-container {
   display: flex;
