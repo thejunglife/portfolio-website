@@ -1,7 +1,14 @@
-.navbar {
-  background: transparent;
+.header {
+  position: fixed;
+  height: 90px;
   width: 100%;
-  margin-top: -75px;
+  /* keeps about image behind navbar */
+  z-index: 1;
+  background-color: transparent;
+}
+
+.header.navbar {
+  height: 100%;
 }
 
 .navbar-bg {
@@ -28,4 +35,10 @@ a.nav-link {
 
 .ms-auto.active-scroll-spy {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar-bg {
+    background-color: transparent;
+  }
 }

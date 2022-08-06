@@ -14,6 +14,8 @@ body,
 html {
   /* !important to override bootstrap fonts */
   font-family: 'Work Sans', sans-serif !important;
+  /* stops clouds creating extra white space */
+  overflow-x: clip;
 }
 
 html {
@@ -21,8 +23,6 @@ html {
 }
 body {
   min-height: 100%;
-  /* stops clouds creating extra white space */
-  overflow-x: hidden;
   background: var(--main-theme) !important;
 }
 
@@ -36,4 +36,3 @@ body {
 .content-wrap {
   flex: 1;
 }
-
