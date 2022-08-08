@@ -4,8 +4,12 @@ import './navbar.css'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import { Button } from 'react-bootstrap'
+import useDarkMode from '../../hooks/useDarkmode.js'
 
 const NavBar = () => {
+  const [isDarkMode, setDarkMode] = useDarkMode()
+  console.log(isDarkMode)
   //change nav color when scroll
   const [color, setColor] = useState(false)
   const changeColor = () => {
@@ -80,6 +84,7 @@ const NavBar = () => {
               >
                 Games
               </Nav.Link>
+              <Button onClick={() => setDarkMode(!isDarkMode)}>clickMe</Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

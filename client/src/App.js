@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -9,9 +10,11 @@ import Main from './pages/Main/Main.js'
 // import Games from './pages/Games/Games.js'
 
 import Navbar from './components/Navbar/Navbar.js'
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer.js'
+
 
 const App = () => {
+  
   return (
     <BrowserRouter>
       <div className="page-container">

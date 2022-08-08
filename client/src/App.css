@@ -21,10 +21,18 @@ html {
 html {
   height: 100%;
 }
+
 body {
   min-height: 100%;
-  background: var(--main-theme) !important;
+  background: var(--main-theme)!important;
 }
+
+body.dark {
+  background: black!important;
+}
+
+
+
 
 /* to keep footer bottom of page at all times */
 .page-container {
