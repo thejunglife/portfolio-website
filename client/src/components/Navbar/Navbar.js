@@ -4,12 +4,13 @@ import './navbar.css'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import { Button } from 'react-bootstrap'
-import useDarkMode from '../../hooks/useDarkmode.js'
+import Switch from 'react-switch'
+import useDarkMode from '../../context/ThemeContext.js'
 
 const NavBar = () => {
-  const [isDarkMode, setDarkMode] = useDarkMode()
-  console.log(isDarkMode)
+  // darkMode switch 
+  const [isDark, setIsDark] = useDarkMode()
+  
   //change nav color when scroll
   const [color, setColor] = useState(false)
   const changeColor = () => {
@@ -28,6 +29,12 @@ const NavBar = () => {
     const yOffset = -80
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
   }
+// react-switch checked code
+  const [checked, setChecked] = useState(false);
+  const handleChange = nextChecked => {
+    setChecked(nextChecked);
+    setIsDark(!isDark)
+  };
 
   return (
     <div className="header">
@@ -77,14 +84,15 @@ const NavBar = () => {
               >
                 Contact
               </Nav.Link>
-              <Nav.Link
+              {/* <Nav.Link
                 data-to-scrollspy-id="game"
                 className="ms-auto"
                 href="/games"
               >
                 Games
-              </Nav.Link>
-              <Button onClick={() => setDarkMode(!isDarkMode)}>clickMe</Button>
+              </Nav.Link> */}
+              <Switch checked={checked} onChange={handleChange }/>
+          
             </Nav>
           </Navbar.Collapse>
         </Container>

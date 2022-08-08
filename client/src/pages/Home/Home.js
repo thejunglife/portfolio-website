@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './home.css'
-import DarkContext from '../../context/DarkContext.js'
-import useDarkMode from '../../hooks/useDarkmode.js'
+
+import useDarkMode from '../../context/ThemeContext.js'
+
 
 const Home = () => {
-  const [isDark] = useState(false)
-  console.log(isDark)
+  // to help change image
+  const [isDark] = useDarkMode()
+  
   return (
-    <DarkContext.Provider value={isDark}>
-      <section className={isDark ? 'homeDark' : 'home'} id="home">
+    
+      <section className={isDark ? 'homeDark' : 'home' } id="home">
         <div className="cloudContainer">
           <div className="cloud one"></div>
           <div className="cloud two"></div>
@@ -18,7 +20,7 @@ const Home = () => {
           <h1>Hello and welcome!</h1>
         </div>
       </section>
-    </DarkContext.Provider>
+   
   )
 }
 

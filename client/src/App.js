@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -12,13 +12,18 @@ import Main from './pages/Main/Main.js'
 import Navbar from './components/Navbar/Navbar.js'
 import Footer from './components/Footer/Footer.js'
 
+import { ThemeProvider } from './context/ThemeContext.js'
+
 
 const App = () => {
   
   return (
+  <ThemeProvider>
     <BrowserRouter>
+    
       <div className="page-container">
         <div className="content-wrap">
+      
           <Navbar />
           <Routes>
             {/* <Route path="/games" element={<Games />}></Route> */}
@@ -26,8 +31,11 @@ const App = () => {
           </Routes>
         </div>
         <Footer />
+      
       </div>
+      
     </BrowserRouter>
+    </ThemeProvider>
   )
 }
 
