@@ -27,7 +27,7 @@
   height: 200px;
   text-align: center;
   padding: 10px;
-  color: var(--main-theme);
+  /* color: var(--main-theme); */
 }
 
 .cloudContainer {

@@ -1,6 +1,7 @@
 import React from 'react'
 import './footer.css'
 import Card from 'react-bootstrap/Card'
+import useDarkMode from '../../context/ThemeContext.js'
 
 import { HashLink } from 'react-router-hash-link'
 import {
@@ -11,8 +12,9 @@ import {
 } from 'react-icons/fa'
 
 const Footer = () => {
+  const [isDark] = useDarkMode()
   return (
-    <Card className="text-center">
+    <Card className={isDark ? 'text-center-dark' : 'text-center'}>
       <Card.Body>
         <Card.Title>
           <HashLink to="#top">

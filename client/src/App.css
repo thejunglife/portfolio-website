@@ -1,8 +1,4 @@
 :root {
-  --midnight-green-eagle-green: #00323dff;
-  --blue-sapphire: #00627aff;
-  --dark-sea-green: #8db580ff;
-  --lavender-blue: #cbc5eaff;
   --granite-gray: #646165ff;
   --main-theme: #031547;
   --sky: #bef5f9;
@@ -29,7 +25,8 @@ body {
 
 body.dark {
   background: black!important;
-}
+  color: #F2F3F5 !important;
+} 
 
 
 

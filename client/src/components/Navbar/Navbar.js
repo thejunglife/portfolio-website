@@ -13,6 +13,7 @@ const NavBar = () => {
   
   //change nav color when scroll
   const [color, setColor] = useState(false)
+
   const changeColor = () => {
     if (window.scrollY >= 550) {
       setColor(true)
@@ -31,15 +32,27 @@ const NavBar = () => {
   }
 // react-switch checked code
   const [checked, setChecked] = useState(false);
+
   const handleChange = nextChecked => {
     setChecked(nextChecked);
     setIsDark(!isDark)
   };
 
+// handles two conditions for navcolor change
+const darkNav = () => {
+  if (color && isDark) {
+    return 'navbar-bg-dark'
+  } else if (color && !isDark) {
+    return 'navbar-bg'
+  } else {
+    return 'navbar'
+  }
+}
+
   return (
     <div className="header">
       <Navbar
-        className={color ? 'navbar-bg' : 'navbar'}
+        className={darkNav()}
         sticky="top"
         expand="lg"
       >
@@ -91,11 +104,18 @@ const NavBar = () => {
               >
                 Games
               </Nav.Link> */}
-              <Switch checked={checked} onChange={handleChange }/>
-          
+              <Nav.Link className="ms-auto">
+                <Switch className="switch" checked={checked} onChange={handleChange} 
+                onColor="#000000"
+                offColor="#87CEEB"
+                offHandleColor="#FDB813"
+                uncheckedIcon={false}
+                checkedIcon={false}
+                />
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-        </Container>
+        </Container> 
       </Navbar>
     </div>
   )
