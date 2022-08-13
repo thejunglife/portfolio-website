@@ -23,11 +23,15 @@
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 200px;
+  width: 750px;
   height: 200px;
-  text-align: center;
   padding: 10px;
   /* color: var(--main-theme); */
+}
+
+.welcome {
+  font-size: 50px;
+  text-align: left;
 }
 
 .cloudContainer {
@@ -40,7 +44,7 @@
   background: white;
   position: absolute;
   border-radius: 1000px;
-  animation: cloudies 20s infinite linear;
+  animation: cloudies 25s infinite linear;
 }
 
 .cloud::before {
@@ -65,22 +69,22 @@
 }
 
 .cloud.one {
-  top: 50%;
+  top: 40%;
   width: 100px;
   height: 30px;
 }
 
 .cloud.two {
-  top: 30%;
+  top: 20%;
   width: 150px;
   height: 50px;
-  animation-duration: 15s;
+  animation-duration: 30s;
 }
 .cloud.three {
-  top: 40%;
+  top: 30%;
   width: 120px;
   height: 40px;
-  animation-duration: 25s;
+  animation-duration: 35s;
 }
 
 @keyframes cloudies {
@@ -91,5 +95,16 @@
   to {
     left: 100%;
     transform: translateX(0%);
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    height: 300px;
+    width: 250px;
+    text-align: center;
+  }
+  .welcome {
+    font-size: 35px;
   }
 }

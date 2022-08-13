@@ -2,7 +2,7 @@ import React, { useState, useContext, createContext, useEffect } from 'react'
 
 const initialState = {
   isDark: false,
-  setIsDark: () => {}
+  setIsDark: () => {},
 }
 
 const ThemeContext = createContext(initialState)
@@ -10,7 +10,7 @@ const ThemeContext = createContext(initialState)
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false)
   return (
-    <ThemeContext.Provider value={{isDark, setIsDark}}>
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
       {children}
     </ThemeContext.Provider>
   )
@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }) => {
 const useDarkMode = () => {
   const { isDark, setIsDark } = useContext(ThemeContext)
 
-    useEffect(() => {
+  useEffect(() => {
     const className = 'dark'
     if (isDark) {
       window.document.body.classList.add(className)
@@ -29,7 +29,6 @@ const useDarkMode = () => {
   }, [isDark])
 
   return [isDark, setIsDark]
-  
 }
 
 export default useDarkMode

@@ -3,3 +3,7 @@
   width: 100%;
   color: var(--outline);
 }
+
+.contactIntro {
+  line-height: 2;
+}

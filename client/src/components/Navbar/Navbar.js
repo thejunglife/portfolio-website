@@ -8,11 +8,14 @@ import Switch from 'react-switch'
 import useDarkMode from '../../context/ThemeContext.js'
 
 const NavBar = () => {
-  // darkMode switch 
+  // darkMode switch
   const [isDark, setIsDark] = useDarkMode()
-  
+
   //change nav color when scroll
   const [color, setColor] = useState(false)
+
+  // navbar close when item is selected
+  const [expanded, setExpanded] = useState(false)
 
   const changeColor = () => {
     if (window.scrollY >= 550) {
@@ -30,35 +33,40 @@ const NavBar = () => {
     const yOffset = -80
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' })
   }
-// react-switch checked code
-  const [checked, setChecked] = useState(false);
+  // react-switch checked code
+  const [checked, setChecked] = useState(false)
 
-  const handleChange = nextChecked => {
-    setChecked(nextChecked);
+  const handleChange = (nextChecked) => {
+    setChecked(nextChecked)
     setIsDark(!isDark)
-  };
-
-// handles two conditions for navcolor change
-const darkNav = () => {
-  if (color && isDark) {
-    return 'navbar-bg-dark'
-  } else if (color && !isDark) {
-    return 'navbar-bg'
-  } else {
-    return 'navbar'
+    setExpanded(false)
   }
-}
+
+  // handles two conditions for navcolor change
+  const darkNav = () => {
+    if (color && isDark) {
+      return 'navbar-bg-dark'
+    } else if (color && !isDark) {
+      return 'navbar-bg'
+    } else {
+      return 'navbar'
+    }
+  }
 
   return (
     <div className="header">
       <Navbar
+        expanded={expanded}
         className={darkNav()}
         sticky="top"
         expand="lg"
       >
         <Container>
           <Navbar.Brand>{`<PJ>`}</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={() => setExpanded(!expanded)}
+          />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link
@@ -67,6 +75,7 @@ const darkNav = () => {
                 to="/#"
                 scroll={scrollWithOffset}
                 className="ms-auto"
+                onClick={() => setExpanded(false)}
               >
                 Home
               </Nav.Link>
@@ -76,6 +85,7 @@ const darkNav = () => {
                 to="/#about"
                 scroll={scrollWithOffset}
                 className="ms-auto"
+                onClick={() => setExpanded(false)}
               >
                 About
               </Nav.Link>
@@ -85,6 +95,7 @@ const darkNav = () => {
                 to="/#project"
                 scroll={scrollWithOffset}
                 className="ms-auto"
+                onClick={() => setExpanded(false)}
               >
                 Project
               </Nav.Link>
@@ -94,6 +105,7 @@ const darkNav = () => {
                 to="/#contact"
                 scroll={scrollWithOffset}
                 className="ms-auto"
+                onClick={() => setExpanded(false)}
               >
                 Contact
               </Nav.Link>
@@ -105,17 +117,20 @@ const darkNav = () => {
                 Games
               </Nav.Link> */}
               <Nav.Link className="ms-auto">
-                <Switch className="switch" checked={checked} onChange={handleChange} 
-                onColor="#000000"
-                offColor="#87CEEB"
-                offHandleColor="#FDB813"
-                uncheckedIcon={false}
-                checkedIcon={false}
+                <Switch
+                  className="switch"
+                  checked={checked}
+                  onChange={handleChange}
+                  onColor="#000000"
+                  offColor="#3dacc9"
+                  offHandleColor="#FDB813"
+                  uncheckedIcon={<div>☁️</div>}
+                  checkedIcon={<div>🌠</div>}
                 />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
-        </Container> 
+        </Container>
       </Navbar>
     </div>
   )

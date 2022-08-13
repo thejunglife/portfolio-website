@@ -10,14 +10,14 @@ const Contact = () => {
     email: '',
     message: '',
   })
-//
+  //
   contactState.handleInputChange = (e) => {
     setContactState({
       ...contactState,
       [e.target.name]: e.target.value,
     })
   }
-//will send contact to backend for nodemailer
+  //will send contact to backend for nodemailer
   contactState.sendContact = async (e) => {
     e.preventDefault()
     try {
@@ -51,12 +51,14 @@ const Contact = () => {
           <Col sm={1}></Col>
           <Col sm={5}>
             <h1>Contact</h1>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab,
-              maxime. Cupiditate quibusdam libero eum quasi possimus
-              praesentium, nihil ad, aliquam, provident nam esse expedita ab
-              sint? Expedita necessitatibus quis perferendis.
-            </p>
+            <h4 className="contactIntro">
+              Have any questions?
+              <br />
+              Would you like to collaborate?
+              <br />
+              Just want to say hello?
+              <br /> Please feel free contact me!
+            </h4>
           </Col>
           <Col sm={5}>
             <Form>

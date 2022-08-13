@@ -19,8 +19,6 @@
   background-color: grey;
 }
 
-
-
 .navbar-brand {
   color: var(--main-theme);
   font-size: 20px;
@@ -43,6 +41,10 @@ a.nav-link {
   color: white;
 }
 
+/* slows down dark mode toggle on collapse */
+#basic-navbar-nav {
+  transition-delay: 1s;
+}
 
 @media (max-width: 768px) {
   .navbar-bg {
