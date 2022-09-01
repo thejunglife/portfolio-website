@@ -6,3 +6,27 @@
 .projectPage {
   color: var(--outline);
 }
+
+.projectIcon {
+  font-size: 60px;
+  background-color: var(--sky);
+}
+
+.tech {
+  text-align: center;
+}
+
+.projectPic {
+  height: 200px;
+  width: 200px;
+  margin:0;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .projectPic {
+  height: 150px;
+  width: 150px;
+  padding-bottom: 10px;
+}
+}
